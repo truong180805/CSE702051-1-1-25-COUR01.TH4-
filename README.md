@@ -33,7 +33,9 @@ npm install
 Thiết lập biến môi trường:
 
 cp .env.example .env
+
 php artisan key:generate
+
 Cấu hình cài đặt cơ sở dữ liệu:
 
 Chỉnh sửa tệp .env để phù hợp với cài đặt cơ sở dữ liệu cục bộ của bạn.
@@ -41,12 +43,15 @@ Chỉnh sửa tệp .env để phù hợp với cài đặt cơ sở dữ liệu
 Chạy Di chuyển và Khởi tạo Cơ sở dữ liệu:
 
 php artisan migrate --seed
+
 Khởi động Máy chủ phát triển cục bộ:
 
 php artisan serve --host=0.0.0.0
+
 Truy cập Ứng dụng:
 
 Mở trình duyệt của bạn và điều hướng đến http://localhost:8000
+
 
 
 
