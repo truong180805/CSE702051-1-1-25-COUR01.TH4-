@@ -4,9 +4,9 @@ Dự án “Web Review & Đánh Giá Phim” là một nền tảng trực tuy�
 //Giao Diện Chính//
 
 Nhóm 10:
-Nguyễn Văn Trường	23010371 (Backend)
-Trịnh Đình Thuận	23010340 (Frontend)
-Đỗ Trung Kiên	23010516(Database/Tester)
+ - Nguyễn Văn Trường	23010371 (Backend)
+ - Trịnh Đình Thuận	23010340 (Frontend)
+ - Đỗ Trung Kiên	23010516(Database/Tester)
 
 Nền tảng cho phép người dùng:
 - Xem thông tin phim (tên, mô tả, thể loại, trailer, điểm đánh giá, v.v.)
@@ -47,6 +47,7 @@ php artisan serve --host=0.0.0.0
 Truy cập Ứng dụng:
 
 Mở trình duyệt của bạn và điều hướng đến http://localhost:8000
+
 
 
 
