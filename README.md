@@ -24,8 +24,8 @@ composer create-project --prefer-dist laravel/laravel {name}
 php artisan serve
 
 Sao chép kho lưu trữ:
-git clone https://github.com/
-cd 
+git clone https://github.com/truong180805/CSE702051-1-1-25-COUR01.TH4-.git
+ 
 
 Cài đặt phụ thuộc:
 composer install
@@ -47,5 +47,6 @@ php artisan serve --host=0.0.0.0
 Truy cập Ứng dụng:
 
 Mở trình duyệt của bạn và điều hướng đến http://localhost:8000
+
 
 
