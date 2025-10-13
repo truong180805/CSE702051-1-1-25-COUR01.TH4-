@@ -30,5 +30,13 @@ Route::middleware('auth')->group(function () {
     // --- Đăng Xuất (Logout) ---
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout'); 
     
-    // ... (Các Route cần xác thực khác sẽ đặt ở đây sau)
+    // viet, xoa , sua review va rating
+    // xu ly tao review va rating moi 
+    Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store'); 
+
+    //xu ly sua review va rating
+    Route::put('/reviews/{review}', [ReviewController::class, 'update'])->name('reviews.update');
+
+    //xu ly xoa review va rating
+    Route::delete('/reviews/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
 });
