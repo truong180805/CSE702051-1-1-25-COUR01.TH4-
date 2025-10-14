@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\AdminReviewController;
+use App\Http\Controllers\Admin\AdminMovieController;
+use App\Http\Controllers\Admin\AdminUserController;
 
 // Route để hiển thị danh sách phim
 Route::get('/', [MovieController::class, 'index'])->name('movies.index');
@@ -54,5 +57,10 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function (){
     Route::get('/users/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
     Route::put('/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
     Route::delete('/users/{user}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
+
+    //quan ly review
+    Route::get('/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews.index');
+    Route::delete('/reviews/{review}', [AdminReviewController::class, 'destroyReview'])->name('admin.reviews.destroy');
+    Route::delete('/comments/{comment}', [AdminReviewController::class, 'destroyComment'])->name('admin.comments.destroy');
 
 });
