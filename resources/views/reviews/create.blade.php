@@ -40,6 +40,8 @@
 
             <form method="POST" action="{{ route('reviews.store', $movie->id) }}">
                 @csrf
+                <!-- Ẩn movie_id để controller nhận được -->
+                <input type="hidden" name="movie_id" value="{{ $movie->id }}">
 
                 <div class="mb-3">
                     <label for="rating" class="form-label">Chọn số sao (1–5)</label>
@@ -54,8 +56,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="comment" class="form-label">Nội dung đánh giá</label>
-                    <textarea name="comment" id="comment" rows="5" class="form-control" placeholder="Chia sẻ cảm nhận của bạn..." required>{{ old('comment') }}</textarea>
+                    <label for="conent" class="form-label">Nội dung đánh giá</label>
+                    <textarea name="conent" id="conent" rows="5" class="form-control" placeholder="Chia sẻ cảm nhận của bạn..." required>{{ old('comment') }}</textarea>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">

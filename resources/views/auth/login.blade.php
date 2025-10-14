@@ -46,7 +46,7 @@
                             Ghi nhớ đăng nhập
                         </label>
                     </div>
-                    <a href="{{ route('password.request') }}" class="text-decoration-none small">Quên mật khẩu?</a>
+                   {{-- <a href="{{ route('password.request') }}" class="text-decoration-none small">Quên mật khẩu?</a> --}}
                 </div>
 
                 <button type="submit" class="btn btn-dark w-100">Đăng nhập</button>

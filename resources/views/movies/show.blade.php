@@ -44,10 +44,10 @@
     <div class="mt-5">
         <h4 class="fw-bold mb-4">📝 Các đánh giá gần đây</h4>
 
-        @if ($reviews->isEmpty())
+        @if ($movie->reviews->isEmpty())
             <p class="text-muted">Chưa có đánh giá nào cho bộ phim này.</p>
         @else
-            @foreach ($reviews as $review)
+            @foreach ($movie->reviews as $review)
                 <div class="card mb-3 shadow-sm border-0">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">

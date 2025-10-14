@@ -13,6 +13,11 @@ use Illuminate\Validation\Rule;
 class ReviewController extends Controller
 {
     //tao revie va rating moi
+    public function create(Movie $movie)
+    {
+        return view('reviews.create', compact('movie'));
+    }
+
     public function store(Request $request)
     {
         //kiem tra du lieu dau vao
