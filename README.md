@@ -51,8 +51,3 @@ php artisan serve --host=0.0.0.0
 Truy cập Ứng dụng:
 
 Mở trình duyệt của bạn và điều hướng đến http://localhost:8000
-
-
-
-
-
