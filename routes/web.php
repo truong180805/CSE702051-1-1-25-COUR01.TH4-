@@ -40,3 +40,12 @@ Route::middleware('auth')->group(function () {
     //xu ly xoa review va rating
     Route::delete('/reviews/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
 });
+
+Route::prefix('admin')->middleware(['auth','admin'])->group(function (){
+    //trang chu quan ly phim
+    Route::get('/movies', [AdminMovieController::class, 'index'])->name('admin.movies.index');
+    Route::get('/movies/create', [AdminMovieController::class, 'create'])->name('admin.movies.create');
+    Route::post('/movies/{movie}/edit', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
+    Route::put('/movies/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
+    Route::delete('/movies/{movie}', [AdminMovieController::class, 'destroy'])->name('admin.movies.destroy');
+});
