@@ -23,7 +23,7 @@
         @foreach ($movies as $movie)
             <div class="col-md-3">
                 <div class="card h-100 shadow-sm border-0">
-                    <img src="{{ $movie->poster_url ?? 'https://via.placeholder.com/300x450?text=No+Image' }}" class="card-img-top" alt="{{ $movie->title }}">
+                    <img src="{{ asset('storage/' . $movie->poster_url) }}" class="card-img-top" alt="{{ $movie->title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ $movie->title }}</h5>
                         <p class="card-text text-muted small">{{ Str::limit($movie->description, 80) }}</p>

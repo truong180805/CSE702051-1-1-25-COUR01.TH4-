@@ -50,7 +50,7 @@
                     <label for="rating" class="form-label">Chọn số sao (1–5)</label>
                     <select name="rating" id="rating" class="form-select" required>
                         @for ($i = 1; $i <= 5; $i++)
-                            <option value="{{ $i }}" {{ $review->rating == $i ? 'selected' : '' }}>
+                            <option value="{{ $i }}" {{ $review->rating->rating == $i ? 'selected' : '' }}>
                                 {{ $i }} ⭐
                             </option>
                         @endfor
@@ -58,8 +58,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="comment" class="form-label">Nội dung đánh giá</label>
-                    <textarea name="comment" id="comment" rows="5" class="form-control" required>{{ $review->comment }}</textarea>
+                    <label for="content" class="form-label">Nội dung đánh giá</label>
+                    <textarea name="content" id="content" rows="5" class="form-control" required>{{ $review->content }}</textarea>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">

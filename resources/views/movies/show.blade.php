@@ -8,9 +8,7 @@
     <!-- Movie header -->
     <div class="row mb-5">
         <div class="col-md-4 text-center">
-            <img src="{{ $movie->poster_url ?? 'https://via.placeholder.com/350x500?text=No+Image' }}"
-                 alt="{{ $movie->title }}"
-                 class="img-fluid rounded shadow-sm">
+        <img src="{{ asset('storage/' . $movie->poster_url) }}" class="card-img-top" alt="{{ $movie->title }}">
         </div>
 
         <div class="col-md-8">

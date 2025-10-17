@@ -23,7 +23,7 @@ class MovieSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'avg_rating' => 4.50,
-                'poster_url' => 'https://example.com/inception.jpg',
+                'poster_url' => 'poster_images/inception_poster.jpg',
                 'trailer_url' => 'https://example.com/inception-trailer.mp4',
             ],
             [
@@ -34,7 +34,7 @@ class MovieSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'avg_rating' => 4.75,
-                'poster_url' => 'https://example.com/dark-knight.jpg',
+                'poster_url' => 'poster_images/The_Dark_Knight_poster.jpg',
                 'trailer_url' => 'https://example.com/dark-knight-trailer.mp'
             ],
             [
@@ -45,7 +45,7 @@ class MovieSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'avg_rating' => 4.60,
-                'poster_url' => 'https://example.com/interstellar.jpg',
+                'poster_url' => 'poster_images/Interstellar_poster.jpg',
                 'trailer_url' => 'https://example.com/interstellar-trailer.mp4',
             ],
             // Thêm nhiều phim hơn nếu cần
