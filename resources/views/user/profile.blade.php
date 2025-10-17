@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="fw-bold">👤 Hồ sơ người dùng</h3>
         @if (Auth::id() === $user->id)
-            <a href="{{ route('user.edit', $user->id) }}" class="btn btn-outline-dark btn-sm">✏️ Chỉnh sửa hồ sơ</a>
+            <a href="{{ route('profile.edit', $user->id) }}" class="btn btn-outline-dark btn-sm">✏️ Chỉnh sửa hồ sơ</a>
         @endif
     </div>
 
@@ -46,10 +46,10 @@
                                     </a>
                                 </h5>
                                 <p class="text-muted mb-1">
-                                    ⭐ {{ $review->rating }}/5 |
+                                    ⭐ {{ $review->rating->rating }}/5 |
                                     <small>{{ $review->created_at->diffForHumans() }}</small>
                                 </p>
-                                <p class="mb-0">{{ $review->comment }}</p>
+                                <p class="mb-0">{{ $review->content }}</p>
                             </div>
 
                             @if (Auth::id() === $user->id)

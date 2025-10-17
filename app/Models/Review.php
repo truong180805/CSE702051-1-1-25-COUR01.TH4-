@@ -29,4 +29,10 @@ class Review extends Model
     {
         return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
+
+    public function rating()
+    {
+    return $this->hasOne(Rating::class, 'movie_id', 'movie_id')
+                ->where('user_id', $this->user_id);
+    }
 }

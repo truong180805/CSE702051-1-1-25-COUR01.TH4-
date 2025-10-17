@@ -26,6 +26,11 @@ class Comment extends Model
         return $this->belongsTo(Movie::class);
     }
 
+    public function review()
+    {
+        return $this->belongsTo(Review::class);
+    }
+
     public function parent()
     {
         return $this->belongsTo(Comment::class, 'parent_id');

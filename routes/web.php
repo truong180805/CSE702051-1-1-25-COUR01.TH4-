@@ -34,13 +34,19 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     // --- Đăng Xuất (Logout) ---
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout'); 
-    
+    // hien thi profile
+    Route::get('/profile', [UserController::class, 'show'])->name('profile');
+    // sua profile
+    Route::get('/profile/edit', [UserController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [UserController::class, 'update'])->name('profile.update');
     // viet, xoa , sua review va rating
+
     // hien thi form viet
     Route::get('/movies/{movie}/reviews/create',[ReviewController::class, 'create'])->name('reviews.create');
     // xu ly tao review va rating moi 
-    Route::post('/movies/{movie}/reviews', [ReviewController::class, 'store'])->name('reviews.store'); 
-
+    Route::post('/movies/{movie}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+    //hien thi form sua
+    Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit'])->name('reviews.edit');
     //xu ly sua review va rating
     Route::put('/reviews/{review}', [ReviewController::class, 'update'])->name('reviews.update');
 

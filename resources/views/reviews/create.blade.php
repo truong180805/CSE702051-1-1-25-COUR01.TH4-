@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="conent" class="form-label">Nội dung đánh giá</label>
-                    <textarea name="conent" id="conent" rows="5" class="form-control" placeholder="Chia sẻ cảm nhận của bạn..." required>{{ old('comment') }}</textarea>
+                    <label for="content" class="form-label">Nội dung đánh giá</label>
+                    <textarea name="content" id="content" rows="5" class="form-control" placeholder="Chia sẻ cảm nhận của bạn..." required>{{ old('content') }}</textarea>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">

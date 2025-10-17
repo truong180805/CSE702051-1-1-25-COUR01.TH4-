@@ -59,6 +59,23 @@ class ReviewController extends Controller
         return redirect()->route('movies.show', $movie)
                          ->with('success', 'Review và Rating của bạn đã được gửi thành công!');
     }
+    //hien thi form sua review va rating
+    public function edit(Review $review)
+    {
+        // 1. Authorization: Đảm bảo người dùng hiện tại là chủ sở hữu của Review
+        if (Auth::id() !== $review->user_id) {
+            abort(403, 'Bạn không có quyền sửa đánh giá này.');
+        }
+
+        // 2. Tải Rating liên quan
+        $rating = Rating::where('user_id', Auth::id())
+                        ->where('movie_id', $review->movie_id)
+                        ->firstOrFail();
+
+        // 3. Trả về View (resources/views/reviews/edit.blade.php)
+        // Cần truyền cả Review và Rating
+        return view('reviews.edit', compact('review', 'rating'));
+    }
 
     //sua review va rating
     public function update(Request $request, Review $review)

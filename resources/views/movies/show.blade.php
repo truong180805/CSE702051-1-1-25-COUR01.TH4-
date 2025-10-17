@@ -27,7 +27,7 @@
             <p class="mb-4">{{ $movie->description ?? 'Không có mô tả cho bộ phim này.' }}</p>
 
             <h5 class="text-warning mb-3">
-                ⭐ Đánh giá trung bình: <strong>{{ number_format($movie->average_rating, 1) ?? 'Chưa có' }}</strong> / 5
+                ⭐ Đánh giá trung bình: <strong>{{ number_format($movie->avg_rating, 1) ?? 'Chưa có' }}</strong> / 5
             </h5>
 
             @auth
@@ -52,9 +52,9 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <strong>{{ $review->user->name }}</strong>
-                            <span class="text-warning">⭐ {{ $review->rating }}/5</span>
+                            <span class="text-warning">⭐ {{ $review->rating->rating }}/5</span>
                         </div>
-                        <p class="mt-2 mb-1">{{ $review->comment }}</p>
+                        <p class="mt-2 mb-1">{{ $review->content }}</p>
                         <small class="text-muted">
                             {{ $review->created_at->diffForHumans() }}
                         </small>
