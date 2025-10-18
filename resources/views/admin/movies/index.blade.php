@@ -25,7 +25,7 @@
             @foreach($movies as $movie)
             <tr>
                 <td>{{ $movie->id }}</td>
-                <td><img src="{{ asset('storage/' . $movie->poster) }}" alt="poster" width="50"></td>
+                <td><img src="{{ asset('storage/' . $movie->poster_url) }}" alt="poster" width="50">
                 <td>{{ $movie->title }}</td>
                 <td>{{ $movie->genre->name ?? 'N/A' }}</td>
                 <td>{{ $movie->year }}</td>

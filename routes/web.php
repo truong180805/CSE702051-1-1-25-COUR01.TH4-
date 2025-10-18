@@ -61,6 +61,7 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function (){
     Route::get('/movies/{movie}/edit', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
     Route::put('/movies/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
     Route::delete('/movies/{movie}', [AdminMovieController::class, 'destroy'])->name('admin.movies.destroy');
+    Route::get('/dashboard', [App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     //quan ly nguoi dung
     Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');

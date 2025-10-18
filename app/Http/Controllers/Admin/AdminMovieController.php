@@ -20,7 +20,7 @@ class AdminMovieController extends Controller
     public function create()
     {
         // Trả về view: resources/views/admin/movies/create.blade.php
-        return view('admin.movies.create');
+        return view('admin.movies.index');
     }
 
     //xu ly tao phim moi

@@ -36,6 +36,22 @@
         .navbar-brand {
             font-weight: 600;
         }
+        .btn-logout {
+        background: none;
+        border: none;
+        color: #adb5bd;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+        font: inherit;
+        cursor: pointer;
+        }
+        .btn-logout:hover {
+            background: #495057;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +64,12 @@
             <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">👥 Người dùng</a>
             <a href="{{ route('admin.reviews.index') }}" class="{{ request()->routeIs('admin.reviews.*') ? 'active' : '' }}">💬 Đánh giá</a>
             <hr class="text-secondary">
-            <a href="{{ route('logout') }}" onclick="return confirm('Đăng xuất khỏi hệ thống?')">🚪 Đăng xuất</a>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit" 
+                    class="btn-logout" 
+                    onclick="return confirm('Đăng xuất khỏi hệ thống?')">🚪 Đăng xuất</button>
+            </form>
         </div>
 
         <!-- Main Content -->
