@@ -51,7 +51,7 @@
             <div class="list-group-item">
                 <strong>{{ $review->user->name }}</strong> đánh giá 
                 <a href="{{ url('/movies/' . $review->movie->id) }}">{{ $review->movie->title }}</a>:
-                <span class="text-warning">★ {{ $review->rating }}/5</span>
+                <span class="text-warning">★ {{ $review->rating->rating}}/5</span>
                 <p class="mb-0 text-muted small">{{ Str::limit($review->content, 120) }}</p>
             </div>
         @endforeach
@@ -60,6 +60,8 @@
             <p class="text-center text-muted">Chưa có đánh giá nào.</p>
         @endif
     </div>
-    
+    <div class="d-flex justify-content-center mt-4">
+        {{ $reviews->links() }}
+    </div>
 </div>
 @endsection

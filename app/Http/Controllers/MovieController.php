@@ -10,18 +10,15 @@ class MovieController extends Controller
 {   
     // Hiển thị danh sách các bộ phim
 
-    public function index()
-    {
-        // Lấy 4 phim mới nhất, có phân trang
-        $movies = Movie::orderBy('id', 'desc')->paginate(4);
+     public function index(){
 
-        // ✅ Lấy 6 review mới nhất, không phân trang để không bị mất khi chuyển trang phim
-        $reviews = Review::with(['user', 'movie'])
-            ->orderBy('created_at', 'desc')
-            ->take(6)
-            ->get();
-
-        return view('movies.index', compact('movies', 'reviews'));
+    // lấy các bộ phim từ cơ sở dữ liệu
+    // sắp xếp theo ngày phát hành mới nhất
+    $movies = Movie::orderBy('id', 'desc')->paginate(4);
+    
+    $reviews = Review::orderBy('created_at', 'desc')->paginate(6);
+    // Truyền danh sách phim vào view
+    return view('movies.index', compact('movies', 'reviews'));
     }
 
 
