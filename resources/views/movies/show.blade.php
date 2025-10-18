@@ -50,7 +50,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <strong>{{ $review->user->name }}</strong>
-                            <span class="text-warning">⭐ {{ $review->rating->rating }}/5</span>
+                            <span class="text-warning">⭐ {{optional($review->rating)->rating ?? 'N/A'}}/5</span>
                         </div>
                         <p class="mt-2 mb-1">{{ $review->content }}</p>
                         <small class="text-muted">
