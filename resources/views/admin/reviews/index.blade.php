@@ -14,7 +14,6 @@
                 <th>Phim</th>
                 <th>Nội dung</th>
                 <th>Điểm</th>
-                <th>Trạng thái</th>
                 <th>Thao tác</th>
             </tr>
         </thead>
@@ -25,21 +24,9 @@
                 <td>{{ $review->user->name }}</td>
                 <td>{{ $review->movie->title }}</td>
                 <td>{{ Str::limit($review->content, 50) }}</td>
-                <td>{{ $review->rating }}/10</td>
+                <td>{{ $review->rating->rating }}/5</td>
                 <td>
-                    @if($review->approved)
-                        <span class="badge bg-success">Đã duyệt</span>
-                    @else
-                        <span class="badge bg-warning text-dark">Chờ duyệt</span>
-                    @endif
-                </td>
-                <td>
-                    @if(!$review->approved)
-                    <form action="{{ route('admin.reviews.approve', $review->id) }}" method="POST" class="d-inline">
-                        @csrf
-                        <button class="btn btn-sm btn-success">Duyệt</button>
-                    </form>
-                    @endif
+                    
                     <form action="{{ route('admin.reviews.destroy', $review->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')

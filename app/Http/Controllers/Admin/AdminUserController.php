@@ -14,7 +14,7 @@ class AdminUserController extends Controller
         // Lấy tất cả người dùng trừ tài khoản Admin hiện tại (tùy chọn)
         $users = User::where('id', '!=', auth()->id())
                      ->orderBy('created_at', 'desc')
-                     ->get();
+                     ->paginate(5);
                      
         // Trả về view: resources/views/admin/users/index.blade.php
         return view('admin.users.index', compact('users'));

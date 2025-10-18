@@ -11,7 +11,7 @@ class AdminMovieController extends Controller
     //hien thi danh sach phim
      public function index()
     {
-        $movies = Movie::orderBy('id', 'desc')->get();
+        $movies = Movie::orderBy('id', 'desc')->paginate(6);
         // Trả về view: resources/views/admin/movies/index.blade.php
         return view('admin.movies.index', compact('movies'));
     }
