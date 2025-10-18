@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('movie_id')->constrained('movies')->onDelete('cascade');
             $table->text('content');
+            $table->integer('rating');
             $table->timestamps();
             $table->unique(['user_id', 'movie_id']); // Đảm bảo mỗi user chỉ viết một review cho mỗi movie
         });
