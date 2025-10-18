@@ -41,7 +41,7 @@
 
         <div class="mb-3">
             <label class="form-label">Poster hiện tại</label><br>
-            <img src="{{ asset('storage/' . $movie->poster_url) }}" alt="poster" width="100">
+            <img src="{{ asset($movie->poster_url) }}" alt="poster" width="100">
         </div>
 
         <div class="mb-3">

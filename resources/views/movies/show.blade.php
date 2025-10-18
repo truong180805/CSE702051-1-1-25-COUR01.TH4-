@@ -8,7 +8,7 @@
     <!-- Movie header -->
     <div class="row mb-5">
         <div class="col-md-4 text-center">
-        <img src="{{ asset('storage/' . $movie->poster_url) }}" class="card-img-top" alt="{{ $movie->title }}">
+        <img src="{{ asset($movie->poster_url) }}" class="card-img-top" alt="{{ $movie->title }}">
         </div>
 
         <div class="col-md-8">

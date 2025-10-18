@@ -55,7 +55,10 @@ class AdminMovieController extends Controller
         // 2. Tạo Movie mới
         $posterPath = null;
         if ($request->hasFile('poster')) {
-            $posterPath = $request->file('poster')->store('posters_images', 'public');
+            $file = $request->file('poster');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images/posters'), $fileName);
+            $posterPath = 'images/posters/' . $fileName;
         }
         Movie::create([
         'title' => $request->title,
@@ -120,8 +123,10 @@ class AdminMovieController extends Controller
         $movie->director = $request->director;
 
         if ($request->hasFile('poster')) {
-            $path = $request->file('poster')->store('poster_images', 'public');
-            $movie->poster_url = $path;
+            $file = $request->file('poster');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images/posters'), $fileName);
+            $movie->poster_url = 'images/posters/' . $fileName;
         }
 
         $movie->save();
