@@ -60,6 +60,7 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function (){
     Route::get('/movies/create', [AdminMovieController::class, 'create'])->name('admin.movies.create');
     Route::get('/movies/{movie}/edit', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
     Route::put('/movies/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
+    Route::post('/movies', [AdminMovieController::class, 'store'])->name('admin.movies.store');
     Route::delete('/movies/{movie}', [AdminMovieController::class, 'destroy'])->name('admin.movies.destroy');
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('admin.dashboard');
 

@@ -27,9 +27,9 @@
                 <td>{{ $movie->id }}</td>
                 <td><img src="{{ asset('storage/' . $movie->poster_url) }}" alt="poster" width="50">
                 <td>{{ $movie->title }}</td>
-                <td>{{ $movie->genre->name ?? 'N/A' }}</td>
+                <td>{{ $movie->genre ?? 'N/A' }}</td>
                 <td>{{ $movie->year }}</td>
-                <td>{{ $movie->rating }}</td>
+                <td>{{ $movie->avg_rating ?? 'chưa có' }}</td>
                 <td>
                     <a href="{{ route('admin.movies.edit', $movie->id) }}" class="btn btn-sm btn-warning">Sửa</a>
                     <form action="{{ route('admin.movies.destroy', $movie->id) }}" method="POST" class="d-inline">

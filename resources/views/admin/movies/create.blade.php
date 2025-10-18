@@ -16,10 +16,10 @@
 
         <div class="mb-3">
             <label class="form-label">Thể loại</label>
-            <select name="genre_id" class="form-select" required>
+            <select name="genre" class="form-select" required>
                 <option value="">-- Chọn thể loại --</option>
                 @foreach($genres as $genre)
-                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                    <option value="{{ $genre }}">{{ $genre }}</option>
                 @endforeach
             </select>
         </div>
@@ -28,7 +28,10 @@
             <label class="form-label">Năm phát hành</label>
             <input type="number" name="year" class="form-control" required>
         </div>
-
+        <div class="mb-3">
+            <label class="form-label">Đạo diễn</label>
+            <input type="text" name="director" class="form-control" placeholder="Nhập tên đạo diễn">
+        </div>
         <div class="mb-3">
             <label class="form-label">Mô tả</label>
             <textarea name="description" class="form-control" rows="4"></textarea>

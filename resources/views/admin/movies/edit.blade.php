@@ -17,12 +17,12 @@
 
         <div class="mb-3">
             <label class="form-label">Thể loại</label>
-            <select name="genre_id" class="form-select" required>
-                @foreach($genres as $genre)
-                    <option value="{{ $genre->id }}" {{ $movie->genre_id == $genre->id ? 'selected' : '' }}>
-                        {{ $genre->name }}
-                    </option>
-                @endforeach
+            <select name="genre" class="form-select" required>
+            @foreach($genres as $genre)
+                <option value="{{ $genre }}" {{ $movie->genre === $genre ? 'selected' : '' }}>
+                    {{ $genre }}
+                </option>
+            @endforeach
             </select>
         </div>
 
@@ -30,7 +30,10 @@
             <label class="form-label">Năm phát hành</label>
             <input type="number" name="year" value="{{ old('year', $movie->year) }}" class="form-control" required>
         </div>
-
+        <div class="mb-3">
+            <label class="form-label">Đạo diễn</label>
+            <input type="text" name="director" value="{{ old('director', $movie->director) }}" class="form-control">
+        </div>
         <div class="mb-3">
             <label class="form-label">Mô tả</label>
             <textarea name="description" class="form-control" rows="4">{{ old('description', $movie->description) }}</textarea>
@@ -38,7 +41,7 @@
 
         <div class="mb-3">
             <label class="form-label">Poster hiện tại</label><br>
-            <img src="{{ asset('storage/' . $movie->poster) }}" alt="poster" width="100">
+            <img src="{{ asset('storage/' . $movie->poster_url) }}" alt="poster" width="100">
         </div>
 
         <div class="mb-3">

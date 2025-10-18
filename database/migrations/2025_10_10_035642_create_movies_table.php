@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->text('description')->nullable();
-            $table->date('release_date')->nullable();
+            $table->year('year')->nullable();
+            $table->string('director')->nullable();
             $table->string('genre')->nullable();
             $table->string('poster_url')->nullable();
             $table->string('trailer_url')->nullable();
