@@ -64,12 +64,8 @@
                             Thể loại
                         </a>
                         <ul class="dropdown-menu">
-                            @foreach($genres as $genre)
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('genres.show', $genre->id) }}">
-                                        {{ $genre->name }}
-                                    </a>
-                                </li>
+                            @foreach($movies as $movie)
+                                <li>{{ $movie->genre }}</li>
                             @endforeach
                         </ul>
                     </li>
@@ -80,8 +76,8 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{ route('user.profile') }}">Trang cá nhân</a></li>
-                                <li><a class="dropdown-item" href="{{ route('user.edit', Auth::user()->id) }}">Chỉnh sửa hồ sơ</a></li>
+                                <li><a class="dropdown-item" href="{{ route('profile') }}">Trang cá nhân</a></li>
+                                <li><a class="dropdown-item" href="{{ route('profile.edit', Auth::user()->id) }}">Chỉnh sửa hồ sơ</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form action="{{ route('logout') }}" method="POST" class="d-inline">
