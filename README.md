@@ -17,7 +17,7 @@ Nền tảng cho phép người dùng:
 Bản báo cáo: //file doc//
 
 usecase
-csdl
+<img width="1342" height="811" alt="image" src="https://github.com/user-attachments/assets/81925373-9997-4126-b036-a1669e462f3d" />
 
 Cài đặt laravel:
 composer create-project --prefer-dist laravel/laravel {name}
