@@ -24,7 +24,7 @@
                 <td>{{ $review->user->name }}</td>
                 <td>{{ $review->movie->title }}</td>
                 <td>{{ Str::limit($review->content, 50) }}</td>
-                <td>{{ $review->rating->rating }}/5</td>
+                <td>{{ $review->rating->rating ?? 'N/A'  }}/5</td>
                 <td>
                     
                     <form action="{{ route('admin.reviews.destroy', $review->id) }}" method="POST" class="d-inline">
