@@ -41,7 +41,7 @@ class RatingSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'user_id' => $userIds[0],
+                'user_id' => $userIds[1],
                 'movie_id' => $movieIds[2] ?? $movieIds[0],
                 'rating' => 2,
                 'created_at' => Carbon::now(),
