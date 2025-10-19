@@ -43,5 +43,33 @@ class MovieController extends Controller
 
         return view('movies.show', compact('movie'));
     }
+    public function filterByGenre($genre)
+{
+    $movies = \App\Models\Movie::where('genre', $genre)
+        ->orderBy('id', 'desc')
+        ->paginate(8);
 
+    $reviews = \App\Models\Review::orderBy('created_at', 'desc')->paginate(6);
+
+    return view('movies.index', compact('movies', 'reviews', 'genre'));
+}
+public function search(Request $request)
+{
+    $keyword = $request->input('keyword');
+
+    // Nếu không nhập gì thì trả về tất cả phim
+    if (!$keyword) {
+        return redirect('/')->with('error', 'Vui lòng nhập từ khóa tìm kiếm.');
+    }
+
+    $movies = \App\Models\Movie::where('title', 'like', "%{$keyword}%")
+        ->orWhere('description', 'like', "%{$keyword}%")
+        ->orderBy('id', 'desc')
+        ->paginate(8);
+
+    // Lấy lại review để giữ giao diện như trang chủ
+    $reviews = \App\Models\Review::orderBy('created_at', 'desc')->paginate(6);
+
+    return view('movies.index', compact('movies', 'reviews', 'keyword'));
+}
 }

@@ -65,7 +65,7 @@ class UserController extends Controller
         $user->update($data);
 
         // 5. Chuyển hướng trở lại trang Profile
-        return redirect()->route('profile.show')
+        return redirect()->route('profile')
                          ->with('success', 'Hồ sơ cá nhân của bạn đã được cập nhật thành công!');
     }
 }

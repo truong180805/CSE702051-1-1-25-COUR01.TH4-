@@ -41,6 +41,7 @@
     @if ($movies->isEmpty())
         <p class="text-center text-muted mt-5">Chưa có phim nào được thêm.</p>
     @endif
+    
 </div>
 
 <!-- Khu vực đánh giá gần đây -->

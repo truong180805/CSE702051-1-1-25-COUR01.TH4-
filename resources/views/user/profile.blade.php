@@ -14,12 +14,6 @@
     <!-- Thông tin người dùng -->
     <div class="card shadow-sm border-0 mb-5">
         <div class="card-body d-flex align-items-center">
-            <div class="me-4">
-                <img src="{{ $user->avatar_url ?? 'https://via.placeholder.com/120x120?text=User' }}"
-                     alt="Avatar"
-                     class="rounded-circle border shadow-sm"
-                     style="width: 120px; height: 120px; object-fit: cover;">
-            </div>
             <div>
                 <h4 class="fw-bold mb-1">{{ $user->name }}</h4>
                 <p class="text-muted mb-1">📧 {{ $user->email }}</p>

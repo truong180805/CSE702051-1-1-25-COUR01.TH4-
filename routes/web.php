@@ -12,7 +12,7 @@ use App\Http\Controllers\UserController;
 
 // Route để hiển thị danh sách phim
 Route::get('/', [MovieController::class, 'index'])->name('movies.index');
-
+Route::get('/movies/search', [MovieController::class, 'search']);
 // Route để hiển thị chi tiết một bộ phim
 Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movies.show');
 
@@ -29,7 +29,7 @@ Route::middleware('guest')->group(function () {
     // Xử lý dữ liệu đăng nhập
     Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 });
-
+Route::get('/genre/{genre}', [MovieController::class, 'filterByGenre'])->name('movies.byGenre');
 // Group Route cho Người dùng đã đăng nhập
 Route::middleware('auth')->group(function () {
     // --- Đăng Xuất (Logout) ---
