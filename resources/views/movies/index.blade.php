@@ -36,7 +36,7 @@
         @endforeach
     </div>
     <div class="d-flex justify-content-center mt-4">
-    {{ $movies->links() }}
+        {{ $movies->appends(['reviews_page' => request('reviews_page')])->links() }}
     </div>
     @if ($movies->isEmpty())
         <p class="text-center text-muted mt-5">Chưa có phim nào được thêm.</p>
@@ -61,7 +61,7 @@
         @endif
     </div>
     <div class="d-flex justify-content-center mt-4">
-        {{ $reviews->links() }}
+        {{ $reviews->appends(['movies_page' => request('movies_page')])->links() }}
     </div>
 </div>
 @endsection

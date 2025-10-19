@@ -47,6 +47,13 @@ class RatingSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+            [
+                'user_id' => $userIds[0],
+                'movie_id' => $movieIds[2] ?? $movieIds[0],
+                'rating' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
         ];
 
         DB::table('ratings')->insert($ratings);
