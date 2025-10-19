@@ -149,7 +149,7 @@ class MovieSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Parasite',
+                'title' => 'Paradise',
                 'description' => 'Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.',
                 'year' => '2019',
                 'genre' => 'Tâm lý, Kịch tính',
