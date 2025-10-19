@@ -52,13 +52,7 @@ class ReviewSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-            [
-                'user_id' => $userIds[1] ?? $userIds[0],
-                'movie_id' => $movieIds[2] ?? $movieIds[0],
-                'content' => 'Tác phẩm cực kỳ cảm xúc, phần nhạc nền quá tuyệt vời!',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
+                  
         ];
 
         DB::table('reviews')->insert($reviews);
