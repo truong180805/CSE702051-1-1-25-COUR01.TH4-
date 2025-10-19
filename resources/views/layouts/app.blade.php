@@ -26,8 +26,13 @@
             color: #fff !important;
             transition: 0.3s;
         }
-        .nav-link:hover {
+        .nav-link:hover,
+        .dropdown-item:hover {
             color: #ffc107 !important;
+        }
+        .dropdown-menu {
+            border-radius: 0.5rem;
+            overflow: hidden;
         }
         footer {
             background: #1a1a1a;
@@ -52,27 +57,44 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/movies') }}">Phim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/reviews') }}">Đánh giá</a></li>
-                    @guest
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Đăng nhập</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Đăng ký</a></li>
-                    @else
+
+                    <!-- Dropdown Thể loại -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="genreDropdown" data-bs-toggle="dropdown">
+                            Thể loại
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach($genres as $genre)
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('genres.show', $genre->id) }}">
+                                        {{ $genre->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+
+                    @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown">
                                 {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{ route('profile') }}">Trang cá nhân</a></li>
+                                <li><a class="dropdown-item" href="{{ route('user.profile') }}">Trang cá nhân</a></li>
+                                <li><a class="dropdown-item" href="{{ route('user.edit', Auth::user()->id) }}">Chỉnh sửa hồ sơ</a></li>
+                                <li><hr class="dropdown-divider"></li>
                                 <li>
-                                    <form action="{{ route('logout') }}" method="POST">
+                                    <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                         @csrf
-                                        <button type="submit" class="dropdown-item">Đăng xuất</button>
+                                        <button type="submit" class="dropdown-item text-danger">Đăng xuất</button>
                                     </form>
                                 </li>
                             </ul>
                         </li>
-                    @endguest
+                    @else
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Đăng nhập</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Đăng ký</a></li>
+                    @endauth
                 </ul>
             </div>
         </div>
