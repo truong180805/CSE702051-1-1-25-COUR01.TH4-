@@ -14,7 +14,7 @@ Nền tảng cho phép người dùng:
 - Xem đánh giá trung bình, bình luận từ cộng đồng
 - Quản trị viên (admin) có thể thêm, sửa, xóa phim và quản lý người dùng
 
-Bản báo cáo: //file doc//
+Bản báo cáo: (https://docs.google.com/document/d/1GeZrst5h7bVbBITEmwdeUxH7h8hq8z2f/edit)
 
 usecase
 <img width="957" height="756" alt="image" src="https://github.com/user-attachments/assets/4f92cd82-2e11-43f7-8f89-ade4f9eaec8d" />
