@@ -19,35 +19,49 @@ Bản báo cáo: (https://docs.google.com/document/d/1GeZrst5h7bVbBITEmwdeUxH7h8
 usecase
 <img width="957" height="756" alt="image" src="https://github.com/user-attachments/assets/4f92cd82-2e11-43f7-8f89-ade4f9eaec8d" />
 
-Cài đặt laravel:
-composer create-project --prefer-dist laravel/laravel {name}
-php artisan serve
+<h1 align='center'>How to deploy - Local Development</h1>
 
-Sao chép kho lưu trữ:
-git clone https://github.com/truong180805/CSE702051-1-1-25-COUR01.TH4-.git
- 
+Install larvel:
+    
+    composer create-project --prefer-dist laravel/laravel {name}
+    php artisan serve
 
-Cài đặt phụ thuộc:
-composer install
-npm install
-Thiết lập biến môi trường:
+Clone the Repository:
 
-cp .env.example .env
+    git clone [https://github.com/m](https://github.com/truong180805/CSE702051-1-1-25-COUR01.TH4-.git)
+    
+Install Dependencies:
 
-php artisan key:generate
+    composer install
+    npm install
+    
+If not installed nodejs:
 
-Cấu hình cài đặt cơ sở dữ liệu:
+    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt-get install -y nodejs
 
-Chỉnh sửa tệp .env để phù hợp với cài đặt cơ sở dữ liệu cục bộ của bạn.
+Install Dependencies orthers:
 
-Chạy Di chuyển và Khởi tạo Cơ sở dữ liệu:
+    npm run build
+    npm run dev
+    
+Set Up Environment Variables:
 
-php artisan migrate --seed
+    cp .env.example .env
+    php artisan key:generate
+    
+Configure Database Settings:
 
-Khởi động Máy chủ phát triển cục bộ:
+Edit the .env file to match your local database settings.
 
-php artisan serve --host=0.0.0.0
+Run Migrations and Seed the Database:
 
-Truy cập Ứng dụng:
 
-Mở trình duyệt của bạn và điều hướng đến http://localhost:8000
+    php artisan migrate --seed
+    
+Start the Local Development Server:
+
+    php artisan serve --host=0.0.0.0
+    
+Visit the Application:
+
+Open your browser and navigate to http://localhost:8000
